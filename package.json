@@ -15,7 +15,9 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "gsap": "^2.0.1",
+    "node-sass": "^4.9.2",
     "nuxt": "^1.0.0",
+    "sass-loader": "^7.0.3",
     "vuex-pathify": "^1.1.0",
     "zircle": "^0.3.3"
   },

@@ -5,10 +5,10 @@
     </span>
     <br>
     <span>
-      <strong> Vue.js </strong>
+      <strong> Netguru - Vue.js </strong>
       </span>
     <br>
-    <span> Ecosystem </span>
+    <span> Space radar </span>
     <section slot="circles">
       <z-scale 
         v-for="(element, index) in ecosystem"
@@ -16,6 +16,7 @@
         :distance="135"
         :gotoview="element.viewName"
         :key="index"
+        color="transparent"
         class="inactive"
         size="medium"
         @mouseover.native="active"
@@ -32,11 +33,31 @@
           </span>
         <section slot="circles">
           <z-scale 
-            v-for="(subelement, index) in element.elements"
-            :angle="(360 / element.elements.length * index) - animatedChildAngle * 11"
-            :distance="32"
+            v-for="(subelement, index) in element.elements.inUse"
+            :angle="(360 / element.elements.inUse.length * index) - animatedChildAngle * 30"
+            :distance="10"
             :key="index"
-            style="background-color: #42b983; border: none; "
+            class="planet-in-use"
+            size="xxs"
+          />
+        </section>
+        <section slot="circles">
+          <z-scale 
+            v-for="(subelement, index) in element.elements.bet"
+            :angle="(360 / element.elements.inUse.length * index) - animatedChildAngle * 20"
+            :distance="20"
+            :key="index"
+            class="planet-bet"
+            size="xxs"
+          />
+        </section>
+        <section slot="circles">
+          <z-scale 
+            v-for="(subelement, index) in element.elements.experiment"
+            :angle="(360 / element.elements.inUse.length * index) - animatedChildAngle * 10"
+            :distance="27"
+            :key="index"
+            class="planet-experiment"
             size="xxs"
           />
         </section>
@@ -112,3 +133,20 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.planet-in-use {
+  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from(rgba(137, 207, 240, 0.5)), color-stop(0.1, white), to(transparent) );
+  border: none;
+}
+
+.planet-bet {
+  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from(rgba(237, 41, 57, 0.5)), color-stop(0.1, white), to(transparent) );
+  border: none;
+}
+
+.planet-experiment {
+  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from(rgba(116, 195, 101, 0.5)), color-stop(0.1, white), to(transparent) );
+  border: none;
+}
+</style>

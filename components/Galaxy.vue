@@ -24,10 +24,6 @@
         @mouseout.native="inactive"
         @touchend.native="inactive"
       >
-        <i
-          class="fa"
-          :class="element.icon"
-        />
         <span slot="label">
           {{element.name}}
           </span>

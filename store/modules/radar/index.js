@@ -78,10 +78,6 @@ const state = {
             url: 'https://vuejs-templates.github.io/webpack',
           },
           {
-            name: 'VueI18n',
-            url: 'https://vue-loader.vuejs.org/',
-          },
-          {
             name: 'Vue-svg-loader',
             url: 'https://vue-loader.vuejs.org/',
           },
@@ -91,10 +87,7 @@ const state = {
           } 
         ],
         bet: [
-          {
-            name: 'VueI18n',
-            url: 'https://vue-loader.vuejs.org/',
-          } 
+          
         ],
         experiment: [
           {

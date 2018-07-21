@@ -1,0 +1,29 @@
+@import './_color-variables.scss';
+
+.radar {
+  background-color: $color-black!important;
+}
+
+.z-content.label{
+  border-radius: 0%;
+  font-size: calc(12px + 1vmax);
+  margin-top: calc(2vmax);
+  pointer-events: none;
+}
+
+.main {
+  background-color: $color-white;
+  color: $color-grey;
+}
+
+.active {
+  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 40, from($color-white), color-stop(0.1, rgba(248,255,128,.5)), to(transparent) );
+  border: none;
+  color: $color-green!important;
+}
+
+.inactive {
+  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 40, from($color-white), color-stop(0.1, rgba(248,255,128,.5)), to(transparent) );
+  border: none;
+  color: $color-white!important;
+}

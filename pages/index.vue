@@ -9,42 +9,39 @@
         App for visualizing Netguru How We Roll when it comes to Vue.js
       </h2>
       <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-        <nuxt-link to="/radar">Space Radar</nuxt-link>
+        <nuxt-link class="button--grey" to="/radar">Space Radar</nuxt-link>
       </div>
     </div>
   </section>
 </template>
 
 <style>
-.container
-{
+.container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+
+.title {
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
 }
-.subtitle
-{
+
+.subtitle {
   font-weight: 300;
   font-size: 42px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
 }
-.links
-{
+
+.links {
   padding-top: 15px;
 }
 </style>

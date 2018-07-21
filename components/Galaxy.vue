@@ -1,5 +1,5 @@
 <template>
-  <z-panel view="home" class="main">
+  <z-panel view="home" class="main" color="transparent">
     <span>
       <img src="https://vuejs.org/images/logo.png" width="50%" height="50%" />
     </span>
@@ -15,7 +15,7 @@
         :angle="(360 / ecosystem.length * index) + animatedEcosystemAngle * 5"
         :distance="135"
         :gotoview="element.viewName"
-        :key="index"
+        :key="element.viewName"
         color="transparent"
         class="inactive"
         size="medium"
@@ -134,19 +134,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.main {
+  opacity: 0.5;			
+	box-shadow: 0px 0px 40px 15px $color-white;
+}
+
 .planet-in-use {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from(rgba(137, 207, 240, 0.5)), color-stop(0.1, white), to(transparent) );
+  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-blueish), color-stop(0.1, $color-white), to(transparent) );
   border: none;
 }
 
 .planet-bet {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from(rgba(237, 41, 57, 0.5)), color-stop(0.1, white), to(transparent) );
+  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-redish), color-stop(0.1, $color-white), to(transparent) );
   border: none;
 }
 
 .planet-experiment {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from(rgba(116, 195, 101, 0.5)), color-stop(0.1, white), to(transparent) );
+  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-greenish), color-stop(0.1, $color-white), to(transparent) );
   border: none;
 }
 </style>

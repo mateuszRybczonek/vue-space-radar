@@ -134,6 +134,7 @@ export default {
   width: 30px!important;
   height: 30px!important;
   margin: -15px 0 0 -20px!important;
+  transition: width .2s ease-in-out, height .2s ease-in-out, margin .2s ease-in-out;
 
   &--in-use {
     box-shadow: 0px 0px 40px 10px $color-blueish;
@@ -156,6 +157,13 @@ export default {
   &__label {
     top: 10px!important ;
     font-size: 16px;
+  }
+
+  &:hover {
+    width: 40px!important;
+    height: 40px!important;
+    margin: -20px 0 0 -24px!important;
+
   }
 }
 </style>

@@ -8,9 +8,11 @@
         Explore Netguru / Vue.js universe
       </h2>
       <div class="links">
-        <button class="button--space">
-          <nuxt-link to="/radar">Start your journey</nuxt-link>
-        </button>
+        <nuxt-link to="/radar">
+          <button class="button--space">
+            Start your journey
+          </button>
+        </nuxt-link>
       </div>
     </div>
   </section>
@@ -71,22 +73,14 @@
     box-shadow: 0 8px 16px 0 rgba(83, 99, 115, 0.32);
     background-color: $color-black;
     border: solid 1px $color-white;
+    color: $color-white;
+    font-size: 12px;
 
     &:hover {
       background-color: $color-white;
       color: $color-black;
-      cursor: pointer;
-    }
-
-    > a {
-      padding: 20px;
-      color: $color-white;
-      text-decoration: none;
       font-size: 16px;
-
-      &:hover {
-      color: $color-black;
-    }
+      cursor: pointer;
     }
   }
 }

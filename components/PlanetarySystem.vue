@@ -124,7 +124,8 @@ export default {
   height: 70px!important;
   margin: -50px 0px 0px -30px!important; 
 	border-radius: 50%;	
-	background: $color-white;
+	background-image: url("~/assets/sun.png");
+  background-size: contain;
 	opacity: 0.9;			
 	box-shadow: 0px 0px 40px 15px $color-white;  
 }
@@ -138,19 +139,22 @@ export default {
 
   &--in-use {
     box-shadow: 0px 0px 40px 10px $color-blueish;
-    background: rgba(137, 207, 240, 0.6);
+    background-image: url("~/assets/earth.png");
+    background-size: contain;
     border: none;
   }
 
   &--bet {
     box-shadow: 0px 0px 40px 5px $color-redish;
-    background: rgba(237, 41, 57, 0.7);
+    background-image: url("~/assets/mars.png");
+    background-size: contain;
     border: none;
   }
 
   &--experiment {
     box-shadow: 0px 0px 40px 5px $color-greenish;
-    background: $color-greenish;
+    background-image: url("~/assets/jupiter.png");
+    background-size: contain;
     border: none;
   }
 

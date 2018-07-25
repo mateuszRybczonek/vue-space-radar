@@ -137,17 +137,23 @@ export default {
 }
 
 .planet-in-use {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-blueish), color-stop(0.1, $color-white), to(transparent) );
+  background-image: url("~/assets/earth.png");
+  background-size: contain;
+  box-shadow: 0px 0px 40px 10px $color-blueish;
   border: none;
 }
 
 .planet-bet {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-redish), color-stop(0.1, $color-white), to(transparent) );
+  background-image: url("~/assets/mars.png");
+  background-size: contain;
+  box-shadow: 0px 0px 40px 5px $color-redish;
   border: none;
 }
 
 .planet-experiment {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-greenish), color-stop(0.1, $color-white), to(transparent) );
+  background-image: url("~/assets/jupiter.png");
+  background-size: contain;
+  box-shadow: 0px 0px 40px 5px $color-greenish;
   border: none;
 }
 </style>

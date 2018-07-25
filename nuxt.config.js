@@ -71,4 +71,7 @@ module.exports = {
       }
     }
   },
+  router: {
+    middleware: 'pages'
+  },
 }

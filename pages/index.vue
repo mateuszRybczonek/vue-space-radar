@@ -17,6 +17,8 @@
         </span>
       </div>
 
+      <Astronaut />
+
       <div class="links">
         <nuxt-link
           to="/radar"
@@ -68,11 +70,13 @@
 
 <script>
 import { mapState } from 'vuex'
+import Astronaut from '@/components/SVG/Astronaut.vue'
 import Heart from '@/components/SVG/Heart.vue'
 import NetguruLogo from '@/components/SVG/NetguruLogo.vue'
 
 export default {
   components: {
+    Astronaut,
     Heart,
     NetguruLogo,
   },

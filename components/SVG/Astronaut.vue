@@ -107,13 +107,43 @@
 					c-5.9,0-11-2.1-15.2-6.3c-2.9-2.9-4.7-6.1-5.6-9.8 M265.6,304.6v16.1 M334.4,282.1v22.6 M300,311.1v-30.1"
 				/>
 			</g>
-      <g>
+			<path
+				class="face"
+				fill="#eebb99"
+				stroke="#2D2D2D"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="M334.7,246.1c0,6.1-3.4,11.2-10.2,15.5c-6.8,4.3-15.1,6.4-24.7,6.4c-9.7,0-17.9-2.1-24.7-6.4c-6.8-4.3-10.2-9.5-10.2-15.5c0-5.1,2.4-9.6,7.3-13.4h55.5C332.3,236.5,334.7,241,334.7,246.1z"
+			/>
+			<circle
+				fill="#000"
+				stroke="#000"
+				stroke-width="1.4389"
+				stroke-miterlimit="10"
+				cx="285"
+				cy="243"
+				r="2"
+			/>
+			<circle
+				fill="#000"
+				stroke="#000"
+				stroke-width="1.4389"
+				stroke-miterlimit="10"
+				cx="315"
+				cy="243"
+				r="2"
+			/>
+      <g
+				:class="[{ active: active }, 'sunglass']"
+			>
         <path
 					fill="#7592A0"
 					d="M324.5,261.6c6.8-4.3,10.2-9.5,10.2-15.5c0-5.1-2.4-9.6-7.2-13.4H272c-4.8,3.8-7.3,8.3-7.3,13.4c0,6.1,3.4,11.2,10.2,15.5c6.8,4.3,15.1,6.4,24.7,6.4C309.4,268,317.6,265.9,324.5,261.6z"
 				/>
       </g>
       <path
+				:class="[{ active: active }, 'sunglass']"
 				fill="none"
 				stroke="#2D2D2D"
 				stroke-width="4"
@@ -122,6 +152,7 @@
 				d="M334.7,246.1c0,6.1-3.4,11.2-10.2,15.5c-6.8,4.3-15.1,6.4-24.7,6.4c-9.7,0-17.9-2.1-24.7-6.4c-6.8-4.3-10.2-9.5-10.2-15.5c0-5.1,2.4-9.6,7.3-13.4h55.5C332.3,236.5,334.7,241,334.7,246.1z"
 			/>
       <path
+				:class="[{ active: active }, 'sunglass']"
 				fill="none"
 				stroke="#E6E6E6"
 				stroke-width="4"
@@ -133,6 +164,18 @@
   </svg>
 </template>
 
+<script>
+export default {
+	props: {
+		active: {
+			type: Boolean,
+			required: true,
+		}
+	}
+}
+</script>
+
+
 <style lang="scss" scoped>
 .astronaut {
 	width: 120px;
@@ -141,6 +184,41 @@
 	&__body {
 		transform: translate3d(-240px, -170px, 0);
 	}
+
+	.sunglass {
+		transform: translate3d(0, 100px, 0) rotateX(60deg);
+
+		&.active {
+			animation: closeSunshade 1.5s linear;
+			animation-fill-mode: forwards;
+		}
+	}
+}
+
+@keyframes closeSunshade {
+  0% {
+    transform: translate3d(0, 100px, 0) rotateX(60deg);
+	}
+	
+	20% {
+    transform: translate3d(0, 70px, 0) rotateX(50deg);
+	}
+	
+	40% {
+    transform: translate3d(0, 40px, 0) rotateX(40deg);
+	}
+	
+	60% {
+    transform: translate3d(0, 0, 0) rotateX(10deg);
+	}
+
+	80% {
+    transform: translate3d(0, 0, 0) rotateX(1deg);
+	}
+
+  100% {
+    transform: translate3d(0, 0, 0) rotateX(0deg);
+  }
 }
 </style>
 

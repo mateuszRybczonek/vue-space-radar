@@ -17,7 +17,7 @@
         </span>
       </div>
 
-      <div :class="[{ active: mouseoverButton }, 'astronaut-container']">
+      <div :class="[{ active: mouseoverButton, deactivated: mouseoutButton }, 'astronaut-container']">
         <Astronaut
           :active="mouseoverButton"
           :class="[{ active: mouseoverButton }, 'astronaut']"
@@ -48,8 +48,8 @@
               width="200"
               height="200"
               viewBox="0 0 200 200"
-              @mouseover="mouseoverButton = true"
-              @mouseout="mouseoverButton = false"
+              @mouseover="mouseoverButtonAction"
+              @mouseout="mouseoutButtonAction"
             >
               <transition-group name="layout" tag="g">
                 <circle
@@ -104,7 +104,19 @@ export default {
       mouseoverButton: false,
     }
   },
-  computed: mapState(['page'])
+
+  computed: mapState(['page']),
+
+  methods: {
+    mouseoverButtonAction () {
+      this.mouseoverButton = true
+      this.mouseoutButton = false
+    },
+    mouseoutButtonAction () {
+      this.mouseoverButton = false
+      this.mouseoutButton = true
+    },
+  }
 }
 </script>
 
@@ -170,12 +182,19 @@ export default {
   top: 45%;
   left: 50%;
   margin-left: -60px;
+  animation: landAstronaut 3s;
 
   &.active {
     transition: all 1s;
-    animation: launchAstronaut 3s;
-    animation-delay: 1.5s;
-    animation-fill-mode: forwards;
+    transform: translateY(-100px);
+    transition-delay: 1.5s;
+    transition-duration: 3s;
+  }
+
+  &.deactivated {
+    transition: all 1s;
+    transform: translateY(0);
+    transition-duration: 15s;
   }
 }
 
@@ -203,8 +222,6 @@ export default {
   top: -20px;
   animation: exhaust 0.2s infinite;
   transition: all 1s;
-  animation: deactivateExhaust 1s;
-  animation-fill-mode: forwards;
 
   &.active {
     animation: activateExhaust 1s;
@@ -219,7 +236,7 @@ export default {
 
   &.active {
     animation: activateFumes 1s;
-    animation-delay: 1.9s;
+    animation-delay: 2s;
     animation-fill-mode: forwards;
   }
 }
@@ -415,11 +432,6 @@ export default {
   }
 }
 
-@keyframes deactivateExhaust {
-  from { height: 150px }
-  to { height: 0 }
-}
-
 @keyframes fumes {
   50% {
     transform: scale(1.5);
@@ -448,10 +460,5 @@ export default {
     opacity: 1;
     top: -50px;
   }
-}
-
-@keyframes launchAstronaut {
-  from { top: 45vh }
-  to { top: 40vh }
 }
 </style>

@@ -117,6 +117,7 @@
 				d="M334.7,246.1c0,6.1-3.4,11.2-10.2,15.5c-6.8,4.3-15.1,6.4-24.7,6.4c-9.7,0-17.9-2.1-24.7-6.4c-6.8-4.3-10.2-9.5-10.2-15.5c0-5.1,2.4-9.6,7.3-13.4h55.5C332.3,236.5,334.7,241,334.7,246.1z"
 			/>
 			<circle
+				class="eye"
 				fill="#000"
 				stroke="#000"
 				stroke-width="1.4389"
@@ -126,6 +127,7 @@
 				r="2"
 			/>
 			<circle
+				class="eye"
 				fill="#000"
 				stroke="#000"
 				stroke-width="1.4389"
@@ -185,6 +187,13 @@ export default {
 		transform: translate3d(-240px, -170px, 0);
 	}
 
+	.eye {
+		animation-duration: 4s;
+		animation-name: eyeBlink;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+
 	.sunglass {
 		transform: translate3d(0, 100px, 0) rotateX(60deg);
 
@@ -219,6 +228,11 @@ export default {
   100% {
     transform: translate3d(0, 0, 0) rotateX(0deg);
   }
+}
+
+@keyframes eyeBlink {
+	0% { r: 0.1 }
+	5%, 100% { r: 2 }
 }
 </style>
 

@@ -1,4 +1,6 @@
 @import './_color-variables.scss';
+@import './_fonts.scss';
+@import './_animations.scss';
 
 .radar {
   background-color: transparent!important;
@@ -29,7 +31,7 @@
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity 1s
+  transition: opacity 2s
 }
 .page-enter, .page-leave-active {
   opacity: 0

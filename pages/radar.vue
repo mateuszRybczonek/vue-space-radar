@@ -8,6 +8,7 @@ import Galaxy from '@/components/Galaxy'
 import Core from '@/components/Core'
 import Tools from '@/components/Tools'
 import Libraries from '@/components/Libraries'
+import { mapActions } from 'vuex'
 
 export default {
   components: {
@@ -17,15 +18,18 @@ export default {
     Libraries
   },
 
+  methods: {
+    ...mapActions([
+      'deactivateAndFloatAstronaut'
+    ])
+  },
+
   mounted () {
     this.$zircleStore.setView('Galaxy')
 
     setTimeout(() => {
-      this.$store.commit('SET_LAUNCHED', false)
-      this.$store.commit('SET_ACTIVATED', false)
-      this.$store.commit('SET_DEACTIVATED', true)
-      this.$store.commit('SET_FLOATING', true)
+      this.deactivateAndFloatAstronaut()
     }, 1000);
-  }
+  },
 }
 </script>

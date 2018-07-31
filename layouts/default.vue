@@ -14,6 +14,7 @@
 <script>
 import GalaxyBackground from '@/components/GalaxyBackground.vue'
 import Astronaut from '@/components/IndexPageAstronaut.vue'
+import { mapActions } from 'vuex'
 
 export default {
   components: {
@@ -25,14 +26,17 @@ export default {
     '$route.path' () {
       switch (this.$route.path) {
         case '/': {
-          this.$store.commit('SET_LAUNCHED', false)
-          this.$store.commit('SET_ACTIVATED', false)
-          this.$store.commit('SET_DEACTIVATED', false)
-          this.$store.commit('SET_FLOATING', false)
+          this.resetAstronaut()
         }
       }
     }
-  }
+  },
+
+  methods: {
+    ...mapActions([
+      'resetAstronaut'
+    ])
+  },
 }
 </script>
 

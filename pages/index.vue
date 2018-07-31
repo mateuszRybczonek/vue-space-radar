@@ -21,8 +21,8 @@
         to="/radar"
       >
         <ButtonRipple
-          @mouseoverButton="mouseoverButtonAction"
-          @mouseoutButton="mouseoutButtonAction"
+          @mouseoverButton="activateAstronaut"
+          @mouseoutButton="deactivateAstronaut"
           @clickButton="launchAstronaut"
         />
       </nuxt-link>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import ButtonRipple from '@/components/atoms/ButtonRipple.vue'
 import Heart from '@/components/SVG/Heart.vue'
 import NetguruLogo from '@/components/SVG/NetguruLogo.vue'
@@ -51,21 +51,13 @@ export default {
     }
   },
 
-  computed: mapState(['page']),
-
   methods: {
-    mouseoverButtonAction () {
-      this.$store.commit('SET_ACTIVATED', true)
-      this.$store.commit('SET_DEACTIVATED', false)
-    },
-    mouseoutButtonAction () {
-      this.$store.commit('SET_ACTIVATED', false)
-      this.$store.commit('SET_DEACTIVATED', true)
-    },
-    launchAstronaut () {
-      this.$store.commit('SET_LAUNCHED', true)
-    }
-  }
+    ...mapActions([
+      'activateAstronaut',
+      'deactivateAstronaut',
+      'launchAstronaut'
+    ])
+  },
 }
 </script>
 

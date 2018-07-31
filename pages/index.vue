@@ -1,22 +1,66 @@
 <template>
   <section class="container">
     <div class="content">
-      <h1 class="title">
-        vue-space-radar
-      </h1>
-      <h2 class="subtitle">
-        Explore Netguru / Vue.js universe
-      </h2>
-      <div class="links">
-        <nuxt-link to="/radar">
-          <button class="button--space">
-            Start your journey
-          </button>
-        </nuxt-link>
+      <div class="main-title">
+        <span class="main-title__title">Explore uni</span>
+        <span class="main-title__title-v">
+          <img src="https://vuejs.org/images/logo.png" width="100px" height="100px" />
+        </span>
+        <span class="main-title__title">erse</span>
       </div>
+      <div class="subtitle">
+        <span>made with</span>
+        <span class="subtitle__heart"><Heart/></span>
+        <span>by</span>
+        <span>
+          <NetguruLogo class="subtitle__netguru-logo" />
+        </span>
+      </div>
+      <nuxt-link
+        class="start-link"
+        to="/radar"
+      >
+        <ButtonRipple
+          @mouseoverButton="activateAstronaut"
+          @mouseoutButton="deactivateAstronaut"
+          @clickButton="launchAstronaut"
+        />
+      </nuxt-link>
     </div>
   </section>
 </template>
+
+<script>
+import { mapState, mapActions } from 'vuex'
+import ButtonRipple from '@/components/atoms/ButtonRipple.vue'
+import Heart from '@/components/SVG/Heart.vue'
+import NetguruLogo from '@/components/SVG/NetguruLogo.vue'
+
+export default {
+  components: {
+    ButtonRipple,
+    Heart,
+    NetguruLogo,
+  },
+
+  data() {
+    return {
+      mouseoverButton: false,
+      mouseoutButton: true,
+      astronautLaunched: false,
+    }
+  },
+
+  methods: {
+    ...mapActions([
+      'activateAstronaut',
+      'deactivateAstronaut',
+      'launchAstronaut'
+    ])
+  },
+}
+</script>
+
 
 <style lang="scss">
 .container {
@@ -26,61 +70,49 @@
   align-items: center;
   text-align: center;
   background-color: $color-black;
-}
 
-.title {
-  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: $color-white;
-  letter-spacing: 1px;
-}
-
-.content {
-    z-index: 1;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: $color-white;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  .content {
   display: flex;
-  justify-content: center;
-}
+  flex-direction: column;
+  z-index: 1;
 
-.button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  text-transform: uppercase;
-  
-  &--space {
-    height: 200px;
-    width: 200px;;
-    letter-spacing: 1px;
-    border-radius: 50%;
-    transition: all 0.6s ease-in-out;
-    outline: none;
-    box-shadow: 0 8px 16px 0 rgba(83, 99, 115, 0.32);
-    background-color: $color-black;
-    border: solid 1px $color-white;
-    color: $color-white;
-    font-size: 12px;
+    .main-title {
+      &__title {
+        @include font(100px, 300, Roboto);
+        color: $color-white;
+        letter-spacing: 1px;
+      }
 
-    &:hover {
-      background-color: $color-white;
-      color: $color-black;
-      font-size: 16px;
-      cursor: pointer;
+      &__title-v {
+        position: relative;
+        top: 30px;
+      }
+    }
+
+    .subtitle {
+      color: $color-white;
+      fill: $color-white;
+      stroke: $color-white;
+
+      &__netguru-logo {
+        @include sizing(100px 20px);
+        position: relative;
+        top: 5px;
+        left: 10px;
+      }
+
+      &__heart {
+        margin: 0 7px;
+        position: relative;
+        top: 5px;
+      }
+    }
+
+    .start-link {
+      margin-top: 180px;
+      padding-top: 15px;
+      display: flex;
+      justify-content: center;
     }
   }
 }

@@ -1,4 +1,7 @@
 @import './_color-variables.scss';
+@import './_mixins.scss';
+@import './_fonts.scss';
+@import './_animations.scss';
 
 .radar {
   background-color: transparent!important;
@@ -29,8 +32,16 @@
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity 1s
+  transition: all 4s;
 }
-.page-enter, .page-leave-active {
-  opacity: 0
+.page-leave-active {
+  margin-top: 2000px;
+}
+
+.page-enter {
+  margin-top: 0;
+}
+
+.z-contentbox.dashed {
+  border: none!important;
 }

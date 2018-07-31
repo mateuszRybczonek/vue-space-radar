@@ -1,20 +1,44 @@
 <template>
   <div>
     <GalaxyBackground />
+    <Astronaut
+      :mouseoverButton="this.$store.state.astronaut.activated"
+      :mouseoutButton="this.$store.state.astronaut.deactivated"
+      :astronautLaunched="this.$store.state.astronaut.launched"
+      :astronautFloating="this.$store.state.astronaut.floating"
+    />
     <nuxt/>
   </div>
 </template>
 
 <script>
 import GalaxyBackground from '@/components/GalaxyBackground.vue'
+import Astronaut from '@/components/IndexPageAstronaut.vue'
+import { mapActions } from 'vuex'
 
 export default {
   components: {
+    Astronaut,
     GalaxyBackground
-  }
+  },
+
+  watch: {
+    '$route.path' () {
+      switch (this.$route.path) {
+        case '/': {
+          this.resetAstronaut()
+        }
+      }
+    }
+  },
+
+  methods: {
+    ...mapActions([
+      'resetAstronaut'
+    ])
+  },
 }
 </script>
-
 
 <style>
 html

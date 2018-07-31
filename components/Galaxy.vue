@@ -132,22 +132,18 @@ export default {
 
 <style scoped lang="scss">
 .main {
-  opacity: 0.5;			
 	box-shadow: 0px 0px 40px 15px $color-white;
 }
 
 .planet-in-use {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-blueish), color-stop(0.1, $color-white), to(transparent) );
-  border: none;
+  @include planet($color-blueish, "~/assets/earth.png")
 }
 
 .planet-bet {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-redish), color-stop(0.1, $color-white), to(transparent) );
-  border: none;
+  @include planet($color-redish, "~/assets/mars.png")
 }
 
 .planet-experiment {
-  background-image: -webkit-gradient(radial, 50% 50%, 2, 50% 50%, 80,  from($color-greenish), color-stop(0.1, $color-white), to(transparent) );
-  border: none;
+  @include planet($color-greenish, "~/assets/jupiter.png")
 }
 </style>

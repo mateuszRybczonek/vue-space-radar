@@ -1,0 +1,27 @@
+@mixin font($font-size, $font-weight:null, $line-height:null, $font-family:null) {
+  font-size: $font-size;
+  @if $font-weight != null {
+    font-weight: $font-weight;
+  }
+  @if $font-family != null {
+    font-family: $font-family;
+  }
+  @if $line-height != null {
+    line-height: $line-height;
+  }
+}
+
+@mixin planet($color, $background-url) {
+  background-image: url($background-url);
+  background-size: contain;
+  box-shadow: 0px 0px 40px 5px $color;
+  border: none;
+}
+
+@mixin sizing($args, $prefix: "") {
+  $width: if(length($args) == 2, nth($args, 1), $args);
+  $height: if(length($args) == 2, nth($args, 2), $args);
+
+  #{$prefix}width: $width;
+  #{$prefix}height: $height;
+}

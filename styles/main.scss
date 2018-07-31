@@ -31,10 +31,14 @@
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity 2s
+  transition: all 4s;
 }
-.page-enter, .page-leave-active {
-  opacity: 0
+.page-leave-active {
+  margin-top: 2000px;
+}
+
+.page-enter {
+  margin-top: 0;
 }
 
 .z-contentbox.dashed {

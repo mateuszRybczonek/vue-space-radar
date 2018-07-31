@@ -132,7 +132,6 @@ export default {
 
 <style scoped lang="scss">
 .main {
-  opacity: 0.5;			
 	box-shadow: 0px 0px 40px 15px $color-white;
 }
 

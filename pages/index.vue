@@ -16,13 +16,6 @@
           <NetguruLogo class="subtitle__netguru-logo" />
         </span>
       </div>
-
-      <Astronaut
-        :mouseoverButton="mouseoverButton"
-        :mouseoutButton="mouseoutButton"
-        :astronautLaunched="astronautLaunched"
-      />
-
       <nuxt-link
         class="start-link"
         to="/radar"
@@ -39,14 +32,12 @@
 
 <script>
 import { mapState } from 'vuex'
-import Astronaut from '@/components/IndexPageAstronaut.vue'
 import ButtonRipple from '@/components/atoms/ButtonRipple.vue'
 import Heart from '@/components/SVG/Heart.vue'
 import NetguruLogo from '@/components/SVG/NetguruLogo.vue'
 
 export default {
   components: {
-    Astronaut,
     ButtonRipple,
     Heart,
     NetguruLogo,
@@ -64,15 +55,15 @@ export default {
 
   methods: {
     mouseoverButtonAction () {
-      this.mouseoverButton = true
-      this.mouseoutButton = false
+      this.$store.commit('SET_ACTIVATED', true)
+      this.$store.commit('SET_DEACTIVATED', false)
     },
     mouseoutButtonAction () {
-      this.mouseoverButton = false
-      this.mouseoutButton = true
+      this.$store.commit('SET_ACTIVATED', false)
+      this.$store.commit('SET_DEACTIVATED', true)
     },
     launchAstronaut () {
-      this.astronautLaunched = true
+      this.$store.commit('SET_LAUNCHED', true)
     }
   }
 }

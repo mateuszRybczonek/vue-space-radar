@@ -205,29 +205,12 @@ export default {
 }
 
 @keyframes closeSunshade {
-  0% {
-    transform: translate3d(0, 100px, 0) rotateX(60deg);
-	}
-	
-	20% {
-    transform: translate3d(0, 70px, 0) rotateX(50deg);
-	}
-	
-	40% {
-    transform: translate3d(0, 40px, 0) rotateX(40deg);
-	}
-	
-	60% {
-    transform: translate3d(0, 0, 0) rotateX(10deg);
-	}
-
-	80% {
-    transform: translate3d(0, 0, 0) rotateX(1deg);
-	}
-
-  100% {
-    transform: translate3d(0, 0, 0) rotateX(0deg);
-  }
+  0% { transform: translate3d(0, 100px, 0) rotateX(60deg) }
+	20% { transform: translate3d(0, 70px, 0) rotateX(50deg) }
+	40% { transform: translate3d(0, 40px, 0) rotateX(40deg) }
+	60% { transform: translate3d(0, 0, 0) rotateX(10deg) }
+	80% {	transform: translate3d(0, 0, 0) rotateX(1deg) }
+	100% { transform: translate3d(0, 0, 0) rotateX(0deg) }
 }
 
 @keyframes eyeBlink {

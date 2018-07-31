@@ -5,6 +5,8 @@
         'astronaut-container--active': mouseoverButton,
         'astronaut-container--deactivated': mouseoutButton,
         'astronaut-container--launched': astronautLaunched,
+        'astronaut-container--floating': astronautFloating,
+
       },
       'astronaut-container'
     ]"
@@ -12,25 +14,19 @@
     <Astronaut
       :active="mouseoverButton"
       :class="[
-        {
-          'astronaut-container__astronaut--active': mouseoverButton
-        },
+        { 'astronaut-container__astronaut--active': mouseoverButton },
         'astronaut-container__astronaut'
       ]"
     />
     <div
       :class="[
-        {
-          'astronaut-container__exhaust-flame--active': mouseoverButton
-        },
+        { 'astronaut-container__exhaust-flame--active': mouseoverButton },
         'astronaut-container__exhaust-flame'
       ]"
     />
     <ul
       :class="[
-        {
-          'astronaut-container__exhaust-fumes--active': mouseoverButton
-        },
+        { 'astronaut-container__exhaust-fumes--active': mouseoverButton },
         'astronaut-container__exhaust-fumes'
       ]"
     >
@@ -69,6 +65,10 @@ export default {
       type: Boolean,
       required: true,
     },
+    astronautFloating: {
+      type: Boolean,
+      required: false,
+    },
   },
 }
 </script>
@@ -83,22 +83,27 @@ export default {
   animation: landAstronaut 3s;
 
   &--active {
-    transition: all 1s;
+    transition: all 3s;
     transform: translateY(-100px);
     transition-delay: 1.5s;
-    transition-duration: 3s;
   }
 
   &--deactivated {
-    transition: all 1s;
+    transition: all 15s;
     transform: translateY(0);
-    transition-duration: 15s;
   }
 
   &--launched {
-    transition: all 1s ease-in-out;
-    transform: translateY(-1000px);
-    transition-duration: 2s;
+    transition: all 3s ease-in-out;
+    transform: translateY(300px);
+  }
+
+  &--floating {
+    transition: all 20s ease-in-out;
+    position: absolute;
+    top: calc(100vh - 200px);
+    left: calc(100% - 200px);
+    margin-left: 0;
   }
 
   &__astronaut {

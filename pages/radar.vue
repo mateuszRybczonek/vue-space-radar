@@ -16,8 +16,16 @@ export default {
     Tools,
     Libraries
   },
+
   mounted () {
     this.$zircleStore.setView('Galaxy')
+
+    setTimeout(() => {
+      this.$store.commit('SET_LAUNCHED', false)
+      this.$store.commit('SET_ACTIVATED', false)
+      this.$store.commit('SET_DEACTIVATED', true)
+      this.$store.commit('SET_FLOATING', true)
+    }, 1000);
   }
 }
 </script>

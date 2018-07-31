@@ -218,4 +218,3 @@ export default {
 	5%, 100% { r: 2 }
 }
 </style>
-

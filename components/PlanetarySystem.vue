@@ -126,8 +126,8 @@ export default {
 	border-radius: 50%;	
 	background-image: url("~/assets/sun.png");
   background-size: contain;
-	opacity: 0.9;			
 	box-shadow: 0px 0px 40px 15px $color-white;  
+	opacity: 0.9;			
 }
 
 
@@ -138,24 +138,15 @@ export default {
   transition: width .2s ease-in-out, height .2s ease-in-out, margin .2s ease-in-out;
 
   &--in-use {
-    box-shadow: 0px 0px 40px 10px $color-blueish;
-    background-image: url("~/assets/earth.png");
-    background-size: contain;
-    border: none;
+    @include planet($color-blueish, "~/assets/earth.png")
   }
 
   &--bet {
-    box-shadow: 0px 0px 40px 5px $color-redish;
-    background-image: url("~/assets/mars.png");
-    background-size: contain;
-    border: none;
+    @include planet($color-redish, "~/assets/mars.png")
   }
 
   &--experiment {
-    box-shadow: 0px 0px 40px 5px $color-greenish;
-    background-image: url("~/assets/jupiter.png");
-    background-size: contain;
-    border: none;
+    @include planet($color-greenish, "~/assets/jupiter.png")
   }
 
   &__label {
@@ -167,7 +158,6 @@ export default {
     width: 40px!important;
     height: 40px!important;
     margin: -20px 0 0 -24px!important;
-
   }
 }
 </style>

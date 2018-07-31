@@ -123,8 +123,7 @@ export default {
 
   &__exhaust-flame {
     position: relative;
-    height: 0;
-    width: 28px;
+    @include sizing(28px 0);
     background: linear-gradient(to bottom, transparent 10%, $color-white 100%);
     left: calc(50% - 14px);
     top: -20px;
@@ -152,47 +151,41 @@ export default {
   &__exhaust-fumes li {
     position: absolute;
     display: flex;
-    width: 60px;
-    height: 60px;
+    @include sizing(60px);
     background-color: $color-white;
     list-style: none;
     border-radius: 100%;
 
     &:first-child {
-      width: 70px;
-      height: 70px;
+      @include sizing(70px);
       top: -20px;
       left: 52%;
       animation: fumes 5s infinite;
     }
 
     &:nth-child(2) {
-      width: 80px;
-      height: 80px;
+      @include sizing(80px);
       left: 50%;
       top: -40px;
       animation: fumes 3.2s infinite;
     }
 
     &:nth-child(3) {
-      width: 60px;
-      height: 60px;
+      @include sizing(60px);
       left: 42%;
       top: -60px;
       animation: fumes 3s 1s infinite;
     }
 
     &:nth-child(4) {
-      width: 90px;
-      height: 90px;
+      @include sizing(90px);
       left: 42%;
       top: -30px;
       animation: fumes 4s 2s infinite;
     }
 
     &:nth-child(5) {
-      width: 100px;
-      height: 100px;
+      @include sizing(100px);
       left: 50%;
       top: 0px;
       margin-top: -50px;
@@ -201,38 +194,33 @@ export default {
     }
 
     &:nth-child(6) {
-      width: 50px;
-      height: 50px;
+       @include sizing(50px);
       left: 52%;
       top: -10px;
     }
 
     &:nth-child(7) {
-      width: 50px;
-      height: 50px;
+      @include sizing(50px);
       left: -5%;
       top: -30px;
     }
 
     &:nth-child(8) {
-      width: 90px;
-      height: 90px;
+      @include sizing(90px);
       left: -5%;
       top: -30px;
       animation: fumes 3s 2s infinite;
     }
 
     &:nth-child(9) {
-      width: 90px;
-      height: 90px;
+      @include sizing(90px);
       left: -6%;
       top: -50px;
       animation: fumes 4s 3s infinite;
     }
 
     &:nth-child(10) {
-      width: 90px;
-      height: 90px;
+      @include sizing(90px);
       left: -8%;
       top: -20px;
       animation: fumes 4s 4s infinite;

@@ -78,9 +78,7 @@ export default {
 
     .main-title {
       &__title {
-        font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
-        font-weight: 300;
-        font-size: 100px;
+        @include font(100px, 300, Roboto);
         color: $color-white;
         letter-spacing: 1px;
       }
@@ -97,8 +95,7 @@ export default {
       stroke: $color-white;
 
       &__netguru-logo {
-        width: 100px;
-        height: 20px;
+        @include sizing(100px 20px);
         position: relative;
         top: 5px;
         left: 10px;

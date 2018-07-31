@@ -136,23 +136,14 @@ export default {
 }
 
 .planet-in-use {
-  background-image: url("~/assets/earth.png");
-  background-size: contain;
-  box-shadow: 0px 0px 40px 10px $color-blueish;
-  border: none;
+  @include planet($color-blueish, "~/assets/earth.png")
 }
 
 .planet-bet {
-  background-image: url("~/assets/mars.png");
-  background-size: contain;
-  box-shadow: 0px 0px 40px 5px $color-redish;
-  border: none;
+  @include planet($color-redish, "~/assets/mars.png")
 }
 
 .planet-experiment {
-  background-image: url("~/assets/jupiter.png");
-  background-size: contain;
-  box-shadow: 0px 0px 40px 5px $color-greenish;
-  border: none;
+  @include planet($color-greenish, "~/assets/jupiter.png")
 }
 </style>

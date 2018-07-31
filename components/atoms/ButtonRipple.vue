@@ -65,8 +65,7 @@ export default {
 <style lang="scss" scoped>
 .button-ripple {
   background-color: $color-white;
-  width: 1em;
-  height: 1em;
+  @include sizing(1em);
   margin-top: 100px;
   border-radius: 50%;
   animation: ripple 1.5s linear infinite;
@@ -83,14 +82,12 @@ export default {
   }
 
   &__text {
-    font-family: "Helvetica Neue";
-    font-weight: lighter;
+    @include font(0, lighter, "Helvetica Neue");
     letter-spacing: 2px;
     transition: all 0.6s ease-in-out;
     transform: translate3d(10px, 10px, 0);
     text-anchor: middle;
     stroke: transparent;
-    font-size: 0;
   }
 
   &--active {

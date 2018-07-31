@@ -180,8 +180,7 @@ export default {
 
 <style lang="scss" scoped>
 .astronaut {
-	width: 120px;
-	height: 180px;
+	@include sizing(120px 180px);
 
 	&__body {
 		transform: translate3d(-240px, -170px, 0);

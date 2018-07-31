@@ -6,7 +6,6 @@
         'astronaut-container--deactivated': mouseoutButton,
         'astronaut-container--launched': astronautLaunched,
         'astronaut-container--floating': astronautFloating,
-
       },
       'astronaut-container'
     ]"
@@ -30,16 +29,7 @@
         'astronaut-container__exhaust-fumes'
       ]"
     >
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li v-for="n in 10" :key="n"></li>
     </ul>
   </div>
 </template>

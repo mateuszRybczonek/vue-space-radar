@@ -6,7 +6,7 @@
     <br>
     <span>
       <strong> Netguru - Vue.js </strong>
-      </span>
+    </span>
     <br>
     <span> Space radar </span>
     <section slot="circles">
@@ -121,8 +121,9 @@ export default {
         target.classList.add('inactive')
         this.ecosystemAnimation.resume()
       }
-    }
+    },
   },
+
   mounted() {
     this.$store.commit('SET_ECOSYSTEM_ANGLE', 365)
     this.$store.commit('SET_CHILD_ANGLE', 365)

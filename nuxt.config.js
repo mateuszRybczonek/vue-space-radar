@@ -34,7 +34,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/zircle.js'
+    '~plugins/zircle.js',
+    '~plugins/vue-js-modal',
+    '~/plugins/font-awesome',
   ],
 
   /*

@@ -1,6 +1,7 @@
 <template>
   <div>
     <GalaxyBackground />
+    <Modal :selectedPlanet="selectedPlanet"/>
     <Astronaut
       :mouseoverButton="this.$store.state.astronaut.activated"
       :mouseoutButton="this.$store.state.astronaut.deactivated"
@@ -14,12 +15,21 @@
 <script>
 import GalaxyBackground from '@/components/GalaxyBackground.vue'
 import Astronaut from '@/components/IndexPageAstronaut.vue'
-import { mapActions } from 'vuex'
+import Modal from '@/components/atoms/Modal.vue'
+
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   components: {
     Astronaut,
-    GalaxyBackground
+    GalaxyBackground,
+    Modal
+  },
+
+  computed: {
+    ...mapGetters([
+      'selectedPlanet',
+    ]),
   },
 
   watch: {

@@ -2,9 +2,7 @@
   <div class="button-ripple">
     <svg
       :class="[
-        {
-          'circle-button--active': mouseoverButton
-        },
+        { 'circle-button--active': mouseoverButton },
         'circle-button'
       ]"
       xmlns="http://www.w3.org/2000/svg"

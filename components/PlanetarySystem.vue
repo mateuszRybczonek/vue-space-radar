@@ -67,12 +67,14 @@ export default {
       requireD: true
     }
   },
+
   data () {
     return {
       tweenedChildAngle: this.$store.getters.childAngle,
       childAnimation: '',
     }
   },
+
   computed: {
     ...mapGetters([
       'childAngle'

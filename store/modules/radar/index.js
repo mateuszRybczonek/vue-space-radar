@@ -1,6 +1,7 @@
 import { make } from 'vuex-pathify'
 
 const state = {
+  selectedPlanet: null,
   ecosystemAngle: 0,
   ecosystemAnimation: '',
   childAnimation: '',
@@ -14,29 +15,43 @@ const state = {
         inUse: [
           {
             name: 'Vue-cli',
-            url: 'https://forum.vuejs.org/',
+            url: 'https://github.com/vuejs/vue-cli',
+            status: 'inUse',
+            fullName: 'vuejs/vue-cli',
+            owner: 'vuejs',
+            avatar: 'https://avatars1.githubusercontent.com/u/6128107?v=4',
+            description: '🛠️ Standard Tooling for Vue.js Development',
+            createdAt: '2015-12-26T23:11:20Z',
+            updatedAt: '2018-07-31T20:23:59Z',
+            stargazersCount: 14454,
+            openIssuesCount: 72,
           },
           {
             name: 'Vuex',
             url: 'https://chat.vuejs.org/',
+            status: 'inUse',
           },
           {
             name: 'Vue-devtools',
             url: 'https://forum.vuejs.org/',
+            status: 'inUse',
           },
           {
             name: 'Vue-router',
             url: 'https://forum.vuejs.org/',
+            status: 'inUse',
           },
           {
             name: 'Eslint-plugin-vue',
             url: 'https://forum.vuejs.org/',
+            status: 'inUse',
           },
         ],
         bet: [
           {
             name: 'Nuxt.js',
             url: 'https://chat.vuejs.org/',
+            status: 'bet',
           }
         ],
         experiment: []

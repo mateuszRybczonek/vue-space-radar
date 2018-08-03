@@ -34,7 +34,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~plugins/zircle.js'
+    '~plugins/zircle.js',
+    '~plugins/vue-js-modal',
+    '~/plugins/font-awesome',
   ],
 
   /*
@@ -43,6 +45,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    ['vue-wait/nuxt', { useVuex: true }],
     ['nuxt-sass-resources-loader', '~/styles/main.scss'],
   ],
   /*

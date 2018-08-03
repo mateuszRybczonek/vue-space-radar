@@ -11,10 +11,11 @@
   }
 }
 
-@mixin planet($color, $background-url) {
+@mixin planet($color, $background-url, $background-size:contain, $box-shadow: 0px 0px 40px 5px $color) {
   background-image: url($background-url);
-  background-size: contain;
-  box-shadow: 0px 0px 40px 5px $color;
+  background-repeat: no-repeat;
+  background-size: $background-size;
+  box-shadow: $box-shadow;
   border: none;
 }
 

@@ -12,7 +12,7 @@
         @touchstart.native="active"
         @mouseout.native="inactive"
         @touchend.native="inactive"
-        @click.native.prevent="this.window.open(element.url, '_blank')"
+        @click.native.prevent="showDetailsModal(element)"
       >
         <span slot="label" class="planet__label">
           {{element.name}}
@@ -29,7 +29,7 @@
         @touchstart.native="active"
         @mouseout.native="inactive"
         @touchend.native="inactive"
-        @click.native.prevent="this.window.open(element.url, '_blank')"
+        @click.native.prevent="showDetailsModal(element)"
       >
         <span slot="label" class="planet__label">
           {{element.name}}
@@ -46,7 +46,7 @@
         @touchstart.native="active"
         @mouseout.native="inactive"
         @touchend.native="inactive"
-        @click.native.prevent="this.window.open(element.url, '_blank')"
+        @click.native.prevent="showDetailsModal(element)"
       >
         <span slot="label" class="planet__label">
           {{element.name}}
@@ -67,12 +67,14 @@ export default {
       requireD: true
     }
   },
+
   data () {
     return {
       tweenedChildAngle: this.$store.getters.childAngle,
       childAnimation: '',
     }
   },
+
   computed: {
     ...mapGetters([
       'childAngle'
@@ -108,6 +110,15 @@ export default {
         this.childAnimation.resume()
       }
     },
+
+    showDetailsModal (planet) {
+      this.$store.commit('SET_SELECTED_PLANET', planet)
+      this.$modal.show('planet-details')
+    },
+
+    hideDetailsModal () {
+      this.$modal.hide('planet-details')
+    }
   },
   mounted() {
     this.$store.commit('SET_CHILD_ANGLE', 0)

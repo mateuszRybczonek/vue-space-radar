@@ -2,9 +2,7 @@
   <div class="button-ripple">
     <svg
       :class="[
-        {
-          'circle-button--active': mouseoverButton
-        },
+        { 'circle-button--active': mouseoverButton },
         'circle-button'
       ]"
       xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +80,8 @@ export default {
   }
 
   &__text {
-    @include font(0, lighter, "Helvetica Neue");
+    @include font(0, lighter);
+    font-family: "Helvetica Neue";
     letter-spacing: 2px;
     transition: all 0.6s ease-in-out;
     transform: translate3d(10px, 10px, 0);

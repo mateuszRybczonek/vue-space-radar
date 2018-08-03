@@ -45,6 +45,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    ['vue-wait/nuxt', { useVuex: true }],
     ['nuxt-sass-resources-loader', '~/styles/main.scss'],
   ],
   /*

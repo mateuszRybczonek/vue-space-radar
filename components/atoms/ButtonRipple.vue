@@ -80,7 +80,8 @@ export default {
   }
 
   &__text {
-    @include font(0, lighter, "Helvetica Neue");
+    @include font(0, lighter);
+    font-family: "Helvetica Neue";
     letter-spacing: 2px;
     transition: all 0.6s ease-in-out;
     transform: translate3d(10px, 10px, 0);

@@ -77,6 +77,9 @@ export default {
       required: true,
     }
   },
+  mounted() {
+    this.$modal.show('planet-details')
+  },
 }
 </script>
 

@@ -1,7 +1,10 @@
 <template>
   <div>
     <GalaxyBackground />
-    <DetailsModal :selectedPlanet="selectedPlanet"/>
+    <DetailsModal
+      v-if="selectedPlanet"
+      :selectedPlanet="selectedPlanet"
+    />
     <Astronaut
       :mouseoverButton="this.$store.state.astronaut.activated"
       :mouseoutButton="this.$store.state.astronaut.deactivated"
@@ -15,7 +18,8 @@
 <script>
 import GalaxyBackground from '@/components/GalaxyBackground.vue'
 import Astronaut from '@/components/IndexPageAstronaut.vue'
-import DetailsModal from '@/components/atoms/DetailsModal.vue'
+import Loading from '@/components/atoms/Loading.vue'
+import ErrorPlaceholder from '@/components/atoms/ErrorPlaceholder.vue'
 
 import { mapActions, mapGetters } from 'vuex'
 
@@ -23,7 +27,12 @@ export default {
   components: {
     Astronaut,
     GalaxyBackground,
-    DetailsModal
+    Loading,
+    DetailsModal: () => ({
+      component: import('@/components/atoms/DetailsModal.vue'),
+      loading: Loading,
+      error: ErrorPlaceholder,
+    }),
   },
 
   computed: {

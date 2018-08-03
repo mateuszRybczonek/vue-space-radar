@@ -27,7 +27,6 @@ export default {
   components: {
     Astronaut,
     GalaxyBackground,
-    Loading,
     DetailsModal: () => ({
       component: import('@/components/atoms/DetailsModal.vue'),
       loading: Loading,
